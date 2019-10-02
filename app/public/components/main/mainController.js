@@ -22,24 +22,20 @@
         numDrivers: 2
       },
       {
-        name: 'Tues',
-        numDrivers: 2
-      },
-      {
         name: 'Wed',
-        numDrivers: 1
+        numDrivers: 2
       },
       {
         name: 'Thurs',
-        numDrivers: 2
-      },
-      {
-        name: 'Fri',
-        numDrivers: 0
+        numDrivers: 1
       },
       {
         name: 'Sat',
-        numDrivers: 1
+        numDrivers: 2
+      },
+      {
+        name: 'Sun',
+        numDrivers: 0
       }
     ];
 
