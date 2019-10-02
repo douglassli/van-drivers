@@ -27,15 +27,11 @@
       },
       {
         name: 'Thurs',
-        numDrivers: 1
-      },
-      {
-        name: 'Sat',
         numDrivers: 2
       },
       {
         name: 'Sun',
-        numDrivers: 0
+        numDrivers: 2
       }
     ];
 
@@ -44,7 +40,9 @@
     // Initialize the app for today's date
     function init() {
       self.today = moment();
-      var monday = self.today.add(3, 'day').startOf('isoweek');
+      console.log(self.today.format('MMMM Do YYYY, h:mm:ss a'));
+      var monday = moment(self.today).startOf('isoWeek');
+      console.log(monday.format('MMMM Do YYYY, h:mm:ss a'));
       loadWeek(monday);
     }
 
@@ -52,8 +50,18 @@
     // for all days in self.week
     function loadWeek(startDay) {
       for (var i = 0; i < self.week.length; i++) {
-        self.week[i].date = moment(startDay);
-        startDay.add(1, 'day');
+        if (self.week[i].name === 'Mon') {
+          self.week[i].date = moment(startDay);
+        } else if (self.week[i].name === 'Wed') {
+          self.week[i].date = moment(startDay).add(2, 'day');
+        } else if (self.week[i].name === 'Thurs') {
+          self.week[i].date = moment(startDay).add(3, 'day');
+        } else if (self.week[i].name === 'Sun') {
+          self.week[i].date = moment(startDay).add(6, 'day');
+        }
+
+        // self.week[i].date = moment(startDay);
+        // startDay.add(1, 'day');
       }
       getDrivers();
     }
