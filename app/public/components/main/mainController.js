@@ -22,12 +22,24 @@
         numDrivers: 2
       },
       {
+        name: 'Tues',
+        numDrivers: 0
+      },
+      {
         name: 'Wed',
         numDrivers: 2
       },
       {
         name: 'Thurs',
         numDrivers: 2
+      },
+      {
+        name: 'Fri',
+        numDrivers: 0
+      },
+      {
+        name: 'Sat',
+        numDrivers: 0
       },
       {
         name: 'Sun',
@@ -40,9 +52,7 @@
     // Initialize the app for today's date
     function init() {
       self.today = moment();
-      console.log(self.today.format('MMMM Do YYYY, h:mm:ss a'));
       var monday = moment(self.today).startOf('isoWeek');
-      console.log(monday.format('MMMM Do YYYY, h:mm:ss a'));
       loadWeek(monday);
     }
 
