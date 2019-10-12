@@ -29,5 +29,5 @@ mongoose.connect(mongoUri);
 // Ping site every 5 minutes to keep Heroku free dyno awake
 var FIVE_MINUTES = 300000;
 setInterval(function() {
-  http.get('http://van-drivers.herokuapp.com');
+  http.get('https://van-drivers-new.herokuapp.com');
 }, FIVE_MINUTES);
