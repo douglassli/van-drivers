@@ -43,7 +43,7 @@
       },
       {
         name: 'Sun',
-        numDrivers: 2
+        numDrivers: 1
       }
     ];
 
